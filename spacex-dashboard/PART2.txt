@@ -1,0 +1,12 @@
+1) If we asked for dynamic capabilities such as rearranging, hiding/showing data, or adding/removing sections from the application, how would you change your code to handle this?
+
+Say we have a parent element and a child that we want to toggle on and off. From the parent element there is a standard way to approach this problem. We could store a boolean in the state called something like toggleChild. We would then use conditional rendering in JSX to either show the child or not. I've seen this implemented quite cleanly before by using a ternary operator with the Component on one side of the ternary and 'null' on the other side.
+
+I do wish that I had done more with Componenets. I only used one one single App.js Component and would like to have broken in down a little better. I did include a boilderplate Statistics.js compenent which can be used to implenent the extentions on functinality.
+
+
+2) How would you handle supporting multiple locations in the dashboard (including adding/removing searched locations arbitrarily), both in terms of UI and architecture?
+
+In terms of UI I would have a dropdown with all the possible locations. When the component loads all the locations would be rendered in that dropdown. The user would then be able to select (one at a time) multiple locations. They would see all their loactions displayed near the dropdown with little "X's" beside them so they could choose to remove a location at any time.
+
+In terms of architecture I would like to have moved the API calls to a little 'actions' folder which would feed into a reducer and then into the React components. This would make it a lot easier to access state globally between componenets. This way, you could make some more complex API calls (with various locations) without a problem.
